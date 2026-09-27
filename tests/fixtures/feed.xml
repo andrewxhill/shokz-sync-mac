@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel><title>Test Pod</title>
+<item><title>Old episode</title><guid>g-old</guid><pubDate>Mon, 01 Sep 2026 10:00:00 GMT</pubDate>
+  <enclosure url="https://ex.com/old.mp3" type="audio/mpeg" length="1"/></item>
+<item><title>Newest episode</title><guid>g-new</guid><pubDate>Wed, 17 Sep 2026 15:38:13 GMT</pubDate>
+  <enclosure url="https://ex.com/new.mp3" type="audio/mpeg" length="1"/></item>
+<item><title>Video only</title><guid>g-vid</guid><pubDate>Thu, 18 Sep 2026 10:00:00 GMT</pubDate>
+  <enclosure url="https://ex.com/v.mp4" type="video/mp4" length="1"/></item>
+<item><title>No guid</title><pubDate>Tue, 09 Sep 2026 10:00:00 GMT</pubDate>
+  <enclosure url="https://ex.com/noguid.mp3" type="audio/mpeg" length="1"/></item>
+</channel></rss>

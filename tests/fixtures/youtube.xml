@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:yt="http://www.youtube.com/xml/schemas/2015" xmlns:media="http://search.yahoo.com/mrss/" xmlns="http://www.w3.org/2005/Atom">
+ <title>Nate &amp; Koa Podcast</title>
+ <entry>
+  <id>yt:video:xKPT3J2oUx8</id><yt:videoId>xKPT3J2oUx8</yt:videoId>
+  <title>WHAT HAPPENS WHEN YOU PUT A WORLD CHAMPION SURFER IN 50ft WAVES?</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=xKPT3J2oUx8"/>
+  <published>2026-05-24T21:50:43+00:00</published>
+ </entry>
+ <entry>
+  <id>yt:video:FZ_Ce-9eUOo</id><yt:videoId>FZ_Ce-9eUOo</yt:videoId>
+  <title>ARE YOU A DANGEROUS BEGINNER SURFER?</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=FZ_Ce-9eUOo"/>
+  <published>2026-09-12T00:29:28+00:00</published>
+ </entry>
+ <entry>
+  <id>yt:video:SHORT000001</id><yt:videoId>SHORT000001</yt:videoId>
+  <title>a short</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/SHORT000001"/>
+  <published>2026-09-20T00:00:00+00:00</published>
+ </entry>
+</feed>

@@ -1,2 +1,15 @@
 # All durable knowledge lives in .okf/. docs/ is scratch that never ships.
 /docs/
+
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+dist/
+
+# Spike artifacts: media and images never get committed
+.shipyard/**/output/
+.shipyard/**/*.mp3
+.shipyard/**/*.dmg
+.shipyard/**/*.log

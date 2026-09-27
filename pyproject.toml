@@ -1,0 +1,47 @@
+[project]
+name = "shokz-sync-mac"
+version = "0.1.0"
+description = "Auto-sync podcasts and YouTube audio to Shokz OpenSwim / OpenSwim Pro MP3 headphones on macOS."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+keywords = ["shokz", "openswim", "openswim-pro", "swimming", "headphones", "mp3", "podcast", "youtube", "macos", "sync"]
+classifiers = [
+    "Environment :: Console",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Sound/Audio",
+]
+dependencies = [
+    "feedparser>=6.0",
+    "mutagen>=1.47",
+    "rich>=13.7",
+    "tomli-w>=1.0",
+    "typer>=0.12",
+    "yt-dlp[default]>=2026.8.19",
+]
+
+[project.scripts]
+shokz-sync = "shokz_sync.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/andrewxhill/shokz-sync-mac"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/shokz_sync"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
