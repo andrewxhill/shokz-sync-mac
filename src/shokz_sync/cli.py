@@ -23,8 +23,15 @@ app = typer.Typer(
 )
 sources_app = typer.Typer(help="Manage sources.", no_args_is_help=True)
 app.add_typer(sources_app, name="sources")
-out = Console()
-err = Console(stderr=True)
+# soft_wrap keeps long lines whole in the launchd log instead of wrapping at 80 columns
+out = Console(soft_wrap=True)
+err = Console(stderr=True, soft_wrap=True)
+
+
+def _stamp(what: str) -> None:
+    """Start each run in the launchd log with a timestamped header; silent in a terminal."""
+    if not out.is_terminal:
+        out.print(f"\n── {datetime.now():%Y-%m-%d %H:%M:%S} · {what} ──", highlight=False)
 
 
 def _cfg() -> Config:
@@ -133,6 +140,7 @@ def sources_disable(name: str) -> None:
 
 def _download(quiet: bool = False) -> library.Report:
     cfg = _cfg()
+    _stamp("download")
     if not cfg.enabled_sources:
         _fail("no enabled sources; add one with: shokz-sync sources add NAME URL")
     try:
@@ -173,6 +181,7 @@ def sync(
         if auto:
             return
         _fail(f"headphones not connected (looking for /Volumes/{cfg.device})")
+    _stamp("sync")
     try:
         with state.lock("commit", wait=60 if auto else 5):
             st = state.State()

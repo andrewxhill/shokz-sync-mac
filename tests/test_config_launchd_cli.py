@@ -61,3 +61,13 @@ def test_launchd_render():
     assert mount["StartOnMount"] is True
     assert "/opt/homebrew/bin" in mount["EnvironmentVariables"]["PATH"]
     plistlib.dumps(dl), plistlib.dumps(mount)  # both serialise
+
+
+def test_log_runs_are_timestamped_but_idle_mounts_are_silent(tmp_path, monkeypatch):
+    monkeypatch.setattr("shokz_sync.device.find", lambda name: None)
+    assert runner.invoke(app, ["sync", "--auto"]).output == ""
+    vol = tmp_path / "vol"
+    vol.mkdir()
+    monkeypatch.setattr("shokz_sync.device.find", lambda name: vol)
+    out = runner.invoke(app, ["sync"]).output
+    assert out.lstrip().startswith("── 20") and "· sync ──" in out
